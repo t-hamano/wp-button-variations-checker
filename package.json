@@ -1,6 +1,6 @@
 {
 	"name": "wp-button-variations-checker",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "A WordPress admin plugin to visually verify button design variations in bulk for the WordPress Admin Reskin (Trac #64308).",
 	"author": "Aki Hamano",
 	"license": "GPL-2.0-or-later",

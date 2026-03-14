@@ -3,7 +3,7 @@
  * Plugin Name: WP Button Variations Checker
  * Description: Check button variations.
  * Requires at least: 7.0
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: Aki Hamano
  * Author URI: https://github.com/t-hamano
  * License: GPL2 or later
