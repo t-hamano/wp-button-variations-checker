@@ -40,7 +40,7 @@ function wp_button_variations_checker_render_page() {
 		),
 	);
 
-	$states = array(
+	$button_states = array(
 		array(
 			'label' => 'Default',
 			'value' => '',
@@ -55,7 +55,7 @@ function wp_button_variations_checker_render_page() {
 		),
 	);
 
-	$variations = array(
+	$button_variations = array(
 		array(
 			'label' => 'Default',
 			'value' => 'button',
@@ -125,28 +125,84 @@ function wp_button_variations_checker_render_page() {
 			'value' => 'button-link button-link-delete',
 		),
 	);
+
+	$button_group_variations = array(
+		array(
+			'label'        => 'Small size',
+			'group_class'  => 'button-group button-small',
+			'active_class' => 'active',
+		),
+		array(
+			'label'        => 'Compact size',
+			'group_class'  => 'button-group button-compact',
+			'active_class' => 'active',
+		),
+		array(
+			'label'        => 'Large size',
+			'group_class'  => 'button-group button-large',
+			'active_class' => 'active',
+		),
+		array(
+			'label'        => 'Hero size',
+			'group_class'  => 'button-group button-hero',
+			'active_class' => 'active',
+		),
+		array(
+			'label'        => 'With Primary Button',
+			'group_class'  => 'button-group',
+			'active_class' => 'button-primary',
+		),
+	);
 	?>
 	<div class="wrap wp-core-ui">
 		<h1>Button Variations Checker</h1>
 		<?php foreach ( $background_colors as $background_color ) : ?>
 			<h2>With <?php echo esc_html( $background_color['label'] ); ?> Background Color</h2>
+
+			<h3>Button Variations</h3>
 			<div style="background-color:<?php echo esc_attr( $background_color['color'] ); ?>;">
 				<table class="wp-list-table widefat fixed table-view-list" style="background:transparent;">
 					<thead>
 						<tr>
 							<th>Variation</th>
-							<?php foreach ( $states as $state ) : ?>
-								<th><?php echo esc_html( $state['label'] ); ?> state</th>
+							<?php foreach ( $button_states as $button_state ) : ?>
+								<th><?php echo esc_html( $button_state['label'] ); ?> state</th>
 							<?php endforeach; ?>
 						</tr>
 					</thead>
 					<tbody>
-						<?php foreach ( $variations as $variation ) : ?>
+						<?php foreach ( $button_variations as $button_variation ) : ?>
 							<tr>
-								<td><?php echo esc_html( $variation['label'] ); ?></td>
-								<?php foreach ( $states as $state ) : ?>
-								<td><button type="button" class="<?php echo esc_attr( $variation['value'] ); ?> <?php echo esc_attr( $state['value'] ); ?>">Push Me</button></td>
+								<td><?php echo esc_html( $button_variation['label'] ); ?></td>
+								<?php foreach ( $button_states as $button_state ) : ?>
+								<td><button type="button" class="<?php echo esc_attr( $button_variation['value'] ); ?> <?php echo esc_attr( $button_state['value'] ); ?>">Push Me</button></td>
 								<?php endforeach; ?>
+							</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+			</div>
+
+			<h3>Button Group Variations</h3>
+			<div style="background-color:<?php echo esc_attr( $background_color['color'] ); ?>;">
+				<table class="wp-list-table widefat fixed table-view-list" style="background:transparent;">
+					<thead>
+						<tr>
+							<th>Variation</th>
+							<th>Example</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach ( $button_group_variations as $group_variation ) : ?>
+							<tr>
+								<td><?php echo esc_html( $group_variation['label'] ); ?></td>
+								<td>
+									<span class="<?php echo esc_attr( $group_variation['group_class'] ); ?>">
+										<button type="button" class="button">Option A</button>
+										<button type="button" class="button <?php echo esc_attr( $group_variation['active_class'] ); ?>">Option B</button>
+										<button type="button" class="button">Option C</button>
+									</span>
+								</td>
 							</tr>
 						<?php endforeach; ?>
 					</tbody>
