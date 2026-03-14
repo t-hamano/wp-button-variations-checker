@@ -1,0 +1,23 @@
+{
+	"name": "t-hamano/wp-button-variations-checker",
+	"description": "WP Button Variations Checker",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Aki Hamano"
+		}
+	],
+	"require-dev": {
+		"squizlabs/php_codesniffer": "*",
+		"wp-coding-standards/wpcs": "^3.3"
+	},
+	"scripts": {
+		"phpcs": "phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs,vendor/phpcsstandards/phpcsextra,vendor/phpcsstandards/phpcsutils",
+		"lint": "phpcs ./ --standard=./phpcs.ruleset.xml"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}

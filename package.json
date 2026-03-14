@@ -1,0 +1,50 @@
+{
+	"name": "flexible-table-block",
+	"version": "3.7.0",
+	"description": "The custom block plugin for the WordPress block editor that allows you to create tables with flexible configurations.",
+	"author": "Aki Hamano",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"gutenberg",
+		"block",
+		"table"
+	],
+	"homepage": "https://github.com/t-hamano/flexible-table-block",
+	"repository": "git+https://github.com/t-hamano/flexible-table-block.git",
+	"bugs": {
+		"url": "https://github.com/t-hamano/flexible-table-block/issues"
+	},
+	"engines": {
+		"node": ">=24.0.0",
+		"npm": ">=10.0.0"
+	},
+	"volta": {
+		"node": "24.14.0",
+		"npm": "10.9.4"
+	},
+	"devDependencies": {
+		"@wordpress/env": "^11.1.0",
+		"husky": "^9.1.7",
+		"lint-staged": "16.4.0"
+	},
+	"scripts": {
+		"wp-env": "wp-env",
+		"lint": "npm run lint:php && npm run lint:md-docs && npm run lint:pkg-json",
+		"lint:php": "composer lint",
+		"lint:md-docs": "wp-scripts lint-md-docs",
+		"lint:pkg-json": "wp-scripts lint-pkg-json",
+		"format": "wp-scripts format",
+		"prepare": "husky"
+	},
+	"lint-staged": {
+		"*.{js,json,ts,tsx,yml,yaml}": [
+			"wp-scripts format"
+		],
+		"*.md": [
+			"wp-scripts lint-md-docs"
+		],
+		"package.json": [
+			"wp-scripts lint-pkg-json"
+		]
+	}
+}
