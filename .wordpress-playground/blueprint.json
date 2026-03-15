@@ -1,0 +1,20 @@
+{
+    "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+    "preferredVersions": {
+        "php": "8.5",
+        "wp": "trunk"
+    },
+    "landingPage": "/wp-admin/admin.php?page=wp-button-variations-checker",
+    "login": true,
+    "steps": [
+        {
+            "step": "installPlugin",
+            "pluginData": {
+                "resource": "git:directory",
+                "url": "https://github.com/t-hamano/wp-button-variations-checker",
+                "ref": "HEAD",
+                "refType": "refname"
+            }
+        }
+    ]
+}
